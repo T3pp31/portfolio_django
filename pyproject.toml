@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "portfolio-django"
+version = "0.1.0"
+description = ""
+authors = ["Fu-Te <37261985+T3pp31@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "portfolio_django"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2"
+django-widgets-improved = "^1.5.0"
+pillow = "^9.5.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -35,3 +35,40 @@ class Work(models.Model):
     url = models.CharField("url", max_length=100, null=True, blank=True)
     created = models.DateTimeField("作成日", null=True, blank=True)
     description = models.TextField("説明")
+
+
+class Experience(models.Model):
+    occupation = models.CharField("職業", max_length=100)
+    company = models.CharField("会社名", max_length=100)
+    description = models.TextField("説明")
+    place = models.CharField("場所", max_length=100)
+    period = models.CharField("期間", max_length=100)
+
+    def __str__(self):
+        return self.occupation
+
+
+class Education(models.Model):
+    school = models.CharField("学校名", max_length=100)
+    course = models.CharField("学科", max_length=100)
+    place = models.CharField("場所", max_length=100)
+    period = models.CharField("期間", max_length=100)
+
+    def __str__(self):
+        return self.course
+
+
+class Software(models.Model):
+    name = models.CharField("ソフトウェア", max_length=100)
+    start_day = models.CharField("開始日", max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
+class Technical(models.Model):
+    name = models.CharField("テクニカル", max_length=100)
+    start_day = models.CharField("開始日", max_length=100)
+
+    def __str__(self):
+        return self.name

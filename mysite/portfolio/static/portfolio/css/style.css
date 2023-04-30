@@ -84,3 +84,12 @@ body {
     transform: translateY(0px);
     opacity: 1;
 }
+
+.avatar img {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.icon {
+    padding: 10px 8px;
+}

@@ -1,7 +1,13 @@
-from django.shortcuts import render
+import textwrap
+
+from django.conf import settings
+from django.core.mail import BadHeaderError, EmailMessage
+from django.http import HttpResponse
+from django.shortcuts import redirect, render
 from django.views.generic import View
 
-from .models import Profile, Work
+from .forms import ContactForm
+from .models import Education, Experience, Profile, Software, Technical, Work
 
 # Create your views here.
 
@@ -31,3 +37,36 @@ class DetailView(View):
         return render(
             request, "portfolio/detail.html", {"work_data": work_data}
         )
+
+
+class AboutView(View):
+    def get(self, request, *args, **kwargs):
+        profile_data = Profile.objects.all()
+        if profile_data.exists():
+            profile_data = profile_data.order_by("-id")[0]
+
+        experience_data = Experience.objects.order_by("-id")
+        education_data = Education.objects.order_by("-id")
+        software_data = Software.objects.order_by("-id")
+        technical_data = Technical.objects.order_by("-id")
+
+        return render(
+            request,
+            "portfolio/about.html",
+            {
+                "profile_data": profile_data,
+                "experience_data": experience_data,
+                "education_data": education_data,
+                "software_data": software_data,
+                "technical_data": technical_data,
+            },
+        )
+
+
+class ContactView(View):
+    """
+    問い合わせ用View
+    """
+
+    def get(self, request, *args, **kwargs):
+        return render(request, "portfolio/contact.html")

@@ -1,0 +1,13 @@
+version: '3'
+services:
+  django:
+    restart: always
+    build: .
+    command: python3 manage.py runserver 8823
+    ports:
+      - 8823:8823
+    container_name: 'django'
+    working_dir: '/root/src/'
+    tty: true
+    volumes:
+      - ./:/root/src

@@ -37,6 +37,17 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-mdeditor"
+version = "0.1.20"
+description = "A simple Django app to edit markdown text."
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "django-mdeditor-0.1.20.tar.gz", hash = "sha256:d1f3b735b6202b8820f10e024a5aa28c5b948897ee7a8dbb84558df75339827e"},
+]
+
+[[package]]
 name = "django-widgets-improved"
 version = "1.5.0"
 description = "Tweak the form field rendering in templates, not in python-level form definitions."
@@ -160,4 +171,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "bf8a58ebaf1c14501d7ad93bf952a145f2042822629b361060f4d726d9f6e2ca"
+content-hash = "84addb4e18f34b980bdad7c640fe39f3c48ac165d6b4662c98d6f91773d1486d"

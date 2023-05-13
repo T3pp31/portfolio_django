@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     "widget_tweaks",
     "portfolio.apps.PortfolioConfig",
     "entrance",
+    "techblog",
+    "mdeditor",
 ]
 
 MIDDLEWARE = [
@@ -118,6 +120,8 @@ TIME_ZONE = "Asia/Tokyo"
 USE_I18N = True
 
 USE_TZ = True
+
+X_FRAME_OPTIONS = "SAMEORIGIN"
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")

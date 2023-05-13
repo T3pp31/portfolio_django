@@ -37,6 +37,22 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-markdown"
+version = "0.8.4"
+description = "Django markdown support and wysiwyg."
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "django-markdown-0.8.4.tar.gz", hash = "sha256:bab6719cac47c7139c9f489816a99fd656caa56d364a2b7d2137db698219b402"},
+    {file = "django_markdown-0.8.4-py2.py3-none-any.whl", hash = "sha256:118d3a3b0dda0279785c007720fe594ccf9fa4cc1d6cee878bb81d36a02dd668"},
+]
+
+[package.dependencies]
+django = "*"
+markdown = "*"
+
+[[package]]
 name = "django-mdeditor"
 version = "0.1.20"
 description = "A simple Django app to edit markdown text."
@@ -186,4 +202,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "1cd2717502d8da6ee533410827e5a23b9f4abeb7b14e08cc05d451a32b93ba63"
+content-hash = "073a7d94149a7df2311f7a41c8b906d2b7857feeeb3b5cd1abbf35b37127db6f"

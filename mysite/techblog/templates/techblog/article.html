@@ -2,8 +2,26 @@
 {% load static %}
 
 {% block content %}
+
+<div class="card top d-flex flex-column justify-content-end mb-4">
+    {% if article.topimage.url %}
+    <img src="{{ article.topimage.url}}" alt="">
+    {% endif %}
+    {% if article.subimage.url %}
+    <img src="{{ article.subimage.url }}" alt="">
+    {% endif %}
 <article class="blog-post">
-    <h4 class="blog-post-title">{{article.title}}</h4>
-    {{ article.markdown_to_html|safe}}
+  <h4 class="blog-post-title">{{ article.title }}</h4>
+  {{ article.markdown_to_html|safe }}
 </article>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/a11y-dark.min.css">
+</head>
+
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+
 {% endblock %}

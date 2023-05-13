@@ -24,7 +24,7 @@ class Article(models.Model):
 
     def markdown_to_html(self):
         md = markdown.Markdown(
-            extentions=["extra", "admonition", "sane_lists", "toc"]
+            extensions=["extra", "admonition", "sane_lists", "toc"]
         )
         html = md.convert(self.content)
         return html

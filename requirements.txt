@@ -3,3 +3,4 @@ django-widget-tweaks
 Pillow
 django-mdeditor
 Markdown
+django-markdown

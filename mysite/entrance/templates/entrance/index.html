@@ -1,0 +1,21 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content%}
+
+
+    {% for top in top_data %}
+    <div class='card top d-flex flex-column justify-content-end mb-4'>
+        <img src="{{ top.image.url }}" alt="">
+        <div class ='overlay text-white p-5'>
+            <h1 class='title'>{{ top.title }}</h1>
+        </div>
+        <a href="{{top.urls}}" class='stretched-link work'></a>
+    </div>
+    {% endfor %}
+
+
+
+
+
+
+{% endblock %}

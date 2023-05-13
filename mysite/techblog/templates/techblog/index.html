@@ -1,8 +1,26 @@
-{% extends 'portfolio/base.html' %}
+{% extends "portfolio/base.html" %}
 
 {% block content %}
 
-
+<div class="row mb-5">
+    {% for article in articles %}
+    <div class="col-6 col-md-3 mb-3">
+        <div class = "card work-thumbnail">
+            {% if article.topimage %}
+            <img src="{{article.topimage.url}}" alt="" class="work-img">
+            {% else %}
+            <img src="{{article.subimage.url}}" alt="" class="work-img">
+            {% endif %}
+            <div class="work-title text-center">
+                <a class="mb-0">
+                    {{ article.title }}
+                </a>
+            </div>
+            <a href="{% url 'article' article.id %}" class="stretched-link work"></a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
 
 {% endblock %}

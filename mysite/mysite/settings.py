@@ -122,6 +122,11 @@ USE_I18N = True
 USE_TZ = True
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
+MDEDITOR_CONFIGS = {
+    "default": {
+        "language": "ja",
+    }
+}
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")

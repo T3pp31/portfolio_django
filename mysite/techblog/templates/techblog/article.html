@@ -1,0 +1,9 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block content %}
+<article class="blog-post">
+    <h4 class="blog-post-title">{{article.title}}</h4>
+    {{ article.markdown_to_html|safe}}
+</article>
+{% endblock %}

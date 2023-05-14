@@ -6,10 +6,10 @@
 <div class="card top d-flex flex-column justify-content-end mb-4">
     {% if article.topimage.url %}
     <img src="{{ article.topimage.url}}" alt="">
-    {% endif %}
-    {% if article.subimage.url %}
+    {% elif article.subimage.url %}
     <img src="{{ article.subimage.url }}" alt="">
     {% endif %}
+</div>
 <article class="blog-post">
   <h4 class="blog-post-title">{{ article.title }}</h4>
   {{ article.markdown_to_html|safe }}

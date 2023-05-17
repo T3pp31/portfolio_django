@@ -4,3 +4,4 @@ Pillow
 django-mdeditor
 Markdown
 django-markdown
+whitenoise

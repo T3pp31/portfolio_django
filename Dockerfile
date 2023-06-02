@@ -17,4 +17,4 @@ WORKDIR /root/src/portfolio_django
 
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
-RUN pip install django django-widgets-improved pillow django-widget-tweaks
+RUN pip install poetry

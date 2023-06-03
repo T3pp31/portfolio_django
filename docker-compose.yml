@@ -3,7 +3,7 @@ services:
   django:
     restart: always
     build: .
-    command: python manage.py runsslserver 0.0.0.0:8000 --certificate portfolio_ssl.crt --key portfolio_ssl.key
+    command: python manage.py runsslserver 0.0.0.0:8989 --certificate portfolio_ssl.crt --key portfolio_ssl.key
     ports:
       - 8989:8989
     container_name: 'django_portfolio'

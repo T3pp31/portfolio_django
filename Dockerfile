@@ -17,4 +17,4 @@ WORKDIR /root/src/portfolio_django
 
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
-RUN pip install django django-widgets-improved pillow django-widget-tweaks whitenoise markdown django-markdown django-mdeditor
+RUN pip install django django-widgets-improved pillow django-widget-tweaks whitenoise markdown django-markdown django-mdeditor django-sslserver

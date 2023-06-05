@@ -30,7 +30,7 @@ SECRET_KEY = (
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -150,10 +150,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # settings.py
-
-SESSION_COOKIE_SECURE = True  # セッションクッキーをHTTPSでのみ送信する
-CSRF_COOKIE_SECURE = True  # CSRFトークンをHTTPSでのみ送信する
-SECURE_HSTS_SECONDS = 31536000  # HSTSを有効化する秒数を設定する
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # HSTSをサブドメインにも適用するか設定する
-SECURE_HSTS_PRELOAD = True  # HSTSプリロードリストに登録するか設定する
-SECURE_SSL_REDIRECT = True  # SSLリダイレクトを有効化する

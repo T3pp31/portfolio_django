@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 
-import sslserver
 import whitenoise
 import widget_tweaks
 
@@ -50,7 +49,6 @@ INSTALLED_APPS = [
     "entrance",
     "techblog",
     "mdeditor",
-    "sslserver",
 ]
 
 MIDDLEWARE = [

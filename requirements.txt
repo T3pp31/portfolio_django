@@ -5,3 +5,6 @@ django-mdeditor
 Markdown
 django-markdown
 whitenoise
+Django
+psycopg2
+gunicorn

@@ -1,38 +1,35 @@
 version: '3'
+
 services:
   db:
-    image: postgres:13.1
-    container_name: postgres
-    volumes:
-      - ./db/dbdata:/var/lib/postgresql/data
-    expose:
-      - '5432'
+    image: postgres
+    ports:
+      - 5432:5432
     environment:
-      - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=myappdb
-
-  django:
-    restart: always
-    build: .
-    image: django
-    container_name: django_portfolio
-    expose:
-      - '8080'
-    tty: true
     volumes:
-      - ./:/root/src
-    depends_on:
-      - db
+      - ./db:/var/lib/postgresql/data
+    container_name: postgres
 
   web:
-    image: nginx:1.18.0
-    container_name: nginx
+    restart: always
+    build: .
+    command: bash -c "python manage.py runserver 0.0.0.0:8000 && python manage.py migrate"
     volumes:
-      - ./web/conf:/etc/nginx/conf.d
-      - ./web/uwsgi_params:/etc/nginx/uwsgi_params
-      - ./src/static:/static/
+      - .:/code
     ports:
-      - '80:80'
+      - 8000:8000
     depends_on:
-      - django
+      - db
+    container_name: django
+
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80
+    depends_on:
+      - web
+    container_name: nginx
+
+volumes:
+  db-data:

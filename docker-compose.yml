@@ -2,6 +2,7 @@ version: '3'
 
 services:
   db:
+    restart: always
     image: postgres
     ports:
       - 5432:5432
@@ -24,6 +25,7 @@ services:
     container_name: django
 
   nginx:
+    restart: always
     build: ./nginx
     ports:
       - 80:80

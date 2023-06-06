@@ -1,13 +1,35 @@
 version: '3'
+
 services:
-  django:
+  db:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    container_name: postgres
+
+  web:
     restart: always
     build: .
-    command: python manage.py runserver 0.0.0.0:8989
-    ports:
-      - 8989:8989
-    container_name: 'django_portfolio'
-    working_dir: '/root/src/'
-    tty: true
+    command: bash -c "python manage.py runserver 0.0.0.0:8000 && python manage.py migrate"
     volumes:
-      - ./:/root/src
+      - .:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    container_name: django
+
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80
+    depends_on:
+      - web
+    container_name: nginx
+
+volumes:
+  db-data:

@@ -1,20 +1,7 @@
 FROM python:3.11
-USER root
-
-RUN apt-get update
-RUN apt-get -y install locales && localedef -f UTF-8 -i ja_JP ja_JP.UTF-8
-RUN apt-get install git
-
-ENV LANG ja_JP.UTF-8
-ENV LANGUAGE ja_JP:ja
-ENV LC_ALL ja_JP.UTF-8
-ENV TZ JST-9
-ENV TERM xterm
-
-RUN mkdir -p /root/src
-RUN apt-get install --reinstall ca-certificates
-WORKDIR /root/src/portfolio_django
-
-RUN pip install --upgrade pip
-RUN pip install --upgrade setuptools
-RUN pip install django django-widgets-improved pillow django-widget-tweaks whitenoise markdown django-markdown django-mdeditor django-sslserver
+ENV PYTHONUNBUFFERED 1
+RUN mkdir ./code
+WORKDIR /code
+COPY requirements.txt /code/
+RUN pip install -r requirements.txt
+COPY . /code/

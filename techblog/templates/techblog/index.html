@@ -2,24 +2,38 @@
 {% block content %}
 
 
-<div class="row mb-5">
-    {% for article in articles %}
-    <div class="col-6 col-md-3 mb-3">
-        <div class = "card work-thumbnail">
-            {% if article.topimage %}
-            <img src="{{article.topimage.url}}" alt="" class="work-img">
-            {% else %}
-            <img src="{{article.subimage.url}}" alt="" class="work-img">
-            {% endif %}
-            <div class="work-title text-center">
-                <a class="mb-0">
-                    {{ article.title }}
-                </a>
-            </div>
-            <a href="{% url 'article' article.id %}" class="stretched-link work"></a>
-        </div>
-    </div>
-    {% endfor %}
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Click</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Upload_data</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for article in articles %}
+            <tr>
+                <td>
+                    <a href="{% url 'article' article.id %}" target="_blank">
+                        <button type="button" class="btn btn-primary btn-sm">
+                            <nobr>詳細表示</nobr>
+                        </button>
+                    </a>
+                </td>
+                <td>{{ article.title}}</td>
+                <td>
+                    {% for category in article.categories.all %}
+                        {{ category.name }}
+                        {% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </td>
+                <td>{{ article.upload_date}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 
 

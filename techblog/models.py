@@ -17,7 +17,7 @@ class Category(models.Model):
 class Article(models.Model):
     title = models.TextField(max_length=200)
     categories = models.ManyToManyField(Category)
-    content = models.TextField()
+    content = MDTextField()
     upload_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     url = models.CharField(max_length=100, null=True, blank=True)

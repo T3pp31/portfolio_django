@@ -32,6 +32,11 @@ services:
     depends_on:
       - web
     container_name: nginx
+    volumes:
+      - ./nginx/conf:/etc/nginx/conf.d
+      - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
+      - ./static:/usr/share/nginx/html/static
+      - ./media:/usr/share/nginx/html/media
 
 volumes:
   db-data:

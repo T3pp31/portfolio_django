@@ -8,3 +8,6 @@ whitenoise
 Django
 psycopg2
 gunicorn
+numpy
+yahooquery
+xlrd

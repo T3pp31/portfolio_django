@@ -16,6 +16,8 @@ markdown = "^3.4.3"
 django-markdown = "^0.8.4"
 whitenoise = "^6.4.0"
 django-sslserver = "^0.22"
+yahooquery = "^2.3.1"
+xlrd = "^2.0.1"
 
 
 [build-system]

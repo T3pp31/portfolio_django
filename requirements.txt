@@ -11,3 +11,4 @@ gunicorn
 numpy
 yahooquery
 xlrd
+django-import-export

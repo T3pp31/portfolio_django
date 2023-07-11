@@ -8,3 +8,7 @@ whitenoise
 Django
 psycopg2
 gunicorn
+numpy
+yahooquery
+xlrd
+django-import-export

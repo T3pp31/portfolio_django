@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     "entrance",
     "techblog",
     "mdeditor",
+    "good_stock",
+    "import_export",
 ]
 
 MIDDLEWARE = [
@@ -152,3 +154,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # settings.py
+IMPORT_EXPORT_IMPORT_PERMISSION_CODE = "change"

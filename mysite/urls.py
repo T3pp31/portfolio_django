@@ -23,6 +23,7 @@ urlpatterns = [
     path("portfolio/", include("portfolio.urls")),
     path("", include("entrance.urls")),
     path("techblog/", include("techblog.urls")),
+    path("good_stock/", include("good_stock.urls")),
 ]
 
 if settings.DEBUG:

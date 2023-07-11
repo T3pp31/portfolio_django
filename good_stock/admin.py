@@ -17,13 +17,17 @@ class MetricsResource(ModelResource):
         model = Metrics
 
 
+@admin.register(FinancialInfo)
 class FinancialInfoResourceAdmin(ImportExportMixin, admin.ModelAdmin):
     resource_class = FinancialInfoResource
 
 
+@admin.register(Metrics)
 class MetricsResourceAdmin(ImportExportMixin, admin.ModelAdmin):
     resource_class = MetricsResource
 
 
 admin.site.register(FinancialInfo)
 admin.site.register(Metrics)
+admin.site.register(FinancialInfoResourceAdmin)
+admin.site.register(MetricsResourceAdmin)

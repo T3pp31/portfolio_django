@@ -26,6 +26,9 @@ class Metrics(models.Model):
     class Meta:
         verbose_name = "Metrics"
 
+    def __str__(self):
+        return self.stock_id
+
 
 class FinancialInfo(models.Model):
     stock_id = models.CharField(max_length=100)
@@ -38,3 +41,6 @@ class FinancialInfo(models.Model):
 
     class Meta:
         verbose_name = "FinancialInfo"
+
+    def __str__(self):
+        return self.stock_id

@@ -13,4 +13,4 @@ def good_stock(request):
 
 
 def downloads(request):
-    render(request, "downloads.html")
+    return render(request, "downloads.html")

@@ -103,6 +103,8 @@ def main():
         errors="ignore",
     )
 
+    clean_metrics()
+
 
 # 企業の財務指標を取得する
 # 引数:証券コード、Tickerオブジェクト
@@ -124,6 +126,7 @@ def get_company_metrics(ticker_num, ticker_data):
             company_metrics.append(
                 ticker_data.summary_detail[ticker_num][summary_detail_key]
             )
+            ticker_data.summary_detail[ticker_num][summary_detail_key]
         except Exception as e:
             print("証券コード:{},未取得の属性:{}".format(ticker_num, summary_detail_key))
             company_metrics.append(np.nan)
@@ -268,6 +271,35 @@ def get_company_finacial_info(ticker_data):
     df_financial_info = df_financial_info.reset_index()
 
     return df_financial_info
+
+
+def clean_metrics():
+    data = pd.read_csv("output/company_metrics.csv")
+    data["fiveYearAvgDividendYield"] = data[
+        "fiveYearAvgDividendYield"
+    ].replace("{}", 0)
+    data["fiveYearAvgDividendYield"] = data[
+        "fiveYearAvgDividendYield"
+    ].replace("", 0)
+    data = data.fillna(0)
+
+    data["fiveYearAvgDividendYield"] = data["fiveYearAvgDividendYield"].astype(
+        float
+    )
+
+    data["dividendYield"] = data["dividendYield"].replace("{}", 0)
+    data["payoutRatio"] = data["payoutRatio"].replace("{}", 0)
+    data["dividendYield"] = data["dividendYield"].astype(float) * 100
+    data["payoutRatio"] = data["payoutRatio"].astype(float) * 100
+
+    data = data.round(2)
+
+    data.to_csv(
+        "output/company_metrics_upload.csv",
+        encoding="utf-8",
+        index=False,
+        errors="ignore",
+    )
 
 
 if __name__ == "__main__":

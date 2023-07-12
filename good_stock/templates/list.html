@@ -1,7 +1,7 @@
 {% extends 'portfolio/base.html'%}
 
 {% block content %}
-<table class="table table-sm w-100" style="border-collapse:separate; border-spacing: 0;">
+<table class="table table-sm" style="border-collapse:separate; border-spacing: 0;">
     <thead class="sticky-top text-center" style="background-color:silver;">
         <tr>
             <th>Stock_id</th>
@@ -24,16 +24,16 @@
             <tr>
                 <td>{{metrics.stock_id}}</td>
                 <td>{{metrics.stock_name}}</td>
-                <td>{{market}}</td>
+                <td>{{metrics.market}}</td>
                 <td>{{metrics.stock_category33}}</td>
                 <td>{{metrics.stock_category17}}</td>
                 <td>{{metrics.dividendRate}}</td>
-                <td>{{dividendYield}}</td>
-                <td>{{fiveYearAvgDividendYield}}</td>
-                <td>{{payoutRatio}}</td>
-                <td>{{marketcap}}</td>
-                <td>{{totalRevenue}}</td>
-                <td>{{roe}}</td>
+                <td>{{metrics.dividendYield}}</td>
+                <td>{{metrics.fiveYearAvgDividendYield}}</td>
+                <td>{{metrics.payoutRatio}}</td>
+                <td>{{metrics.marketcap}}</td>
+                <td>{{metrics.totalRevenue}}</td>
+                <td>{{metrics.roe}}</td>
             </tr>
         {% endfor %}
     </tbody>

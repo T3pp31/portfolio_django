@@ -1,0 +1,43 @@
+{% extends 'portfolio/base.html'%}
+
+{% block content %}
+<table class="table table-sm w-100" style="border-collapse:separate; border-spacing: 0;">
+    <thead class="sticky-top text-center" style="background-color:silver;">
+        <tr>
+            <th>Stock_id</th>
+            <th>銘柄名</th>
+            <th>マーケット</th>
+            <th>カテゴリー33</th>
+            <th>カテゴリー17</th>
+            <th>配当利率</th>
+            <th>配当利回り</th>
+            <th>5年間平均配当利回り</th>
+            <th>配当性向</th>
+            <th>時価総額</th>
+            <th>総収入</th>
+            <th>ROE</th>
+
+        <tr>
+    </thead>
+    <tbody>
+        {% for metrics,financial in stock%}
+            <tr>
+                <td>{{metrics.stock_id}}</td>
+                <td>{{metrics.stock_name}}</td>
+                <td>{{market}}</td>
+                <td>{{metrics.stock_category33}}</td>
+                <td>{{metrics.stock_category17}}</td>
+                <td>{{metrics.dividendRate}}</td>
+                <td>{{dividendYield}}</td>
+                <td>{{fiveYearAvgDividendYield}}</td>
+                <td>{{payoutRatio}}</td>
+                <td>{{marketcap}}</td>
+                <td>{{totalRevenue}}</td>
+                <td>{{roe}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'downloads' %}">Downloads</a>
+
+{% endblock%}

@@ -43,3 +43,11 @@ class FinancialInfo(models.Model):
 
     def __str__(self):
         return self.stock_id
+
+
+class GoodStock(models.Model):
+    stock_id = models.CharField(max_length=100)
+    stock_name = models.CharField(max_length=100)
+    want_to_buy_dividendYield = models.CharField()
+    no_dividend_decrease_year = models.IntegerField(blank=True, null=True)
+    dividend_increase_year = models.IntegerField(blank=True, null=True)

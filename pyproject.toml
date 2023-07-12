@@ -18,6 +18,7 @@ whitenoise = "^6.4.0"
 django-sslserver = "^0.22"
 yahooquery = "^2.3.1"
 xlrd = "^2.0.1"
+openpyxl = "^3.1.2"
 
 
 [build-system]

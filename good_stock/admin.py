@@ -109,3 +109,4 @@ class MetricsAdmin(ImportMixin, admin.ModelAdmin):
 
 admin.site.register(FinancialInfo, FinancialInfoAdmin)
 admin.site.register(Metrics, MetricsAdmin)
+admin.site.register(GoodStock)

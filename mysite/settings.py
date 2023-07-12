@@ -155,3 +155,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # settings.py
 IMPORT_EXPORT_IMPORT_PERMISSION_CODE = "change"
+
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 6000
+# 2000まで一度に削除可能、もっと削除したいときは10000とかにする

@@ -39,5 +39,19 @@
     </tbody>
 </table>
 
+<form method="post">
+    {% csrf_token %}
+    <nav class="navbar fixed-bottom navbar-bottom">
+        <div class="row flex-nowrap ms-2">
+            <div class="col-auto">
+                <button type="submit" name="dividendYield" class='btn btn-primary'>配当利回り順</button>
+                <button type="submit" name="fiveYearAvgDividendYield" class="btn btn-warning">5年間平均利回り順</button>
+
+
+            </div>
+        </div>
+    </nav>
+</form>
+
 
 {% endblock%}
